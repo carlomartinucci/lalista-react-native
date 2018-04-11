@@ -3,11 +3,14 @@
     "name": "laltralista",
     "slug": "laltralista",
     "sdkVersion": "26.0.0",
-    "version": "0.1.0",
+    "version": "1.0.1",
     "platforms": ["android"],
     "githubUrl": "https://github.com/carlomartinucci/lalista-react-native",
     "primaryColor": "#007BFF",
     "icon": "./android-chrome-384x384.png",
-    "scheme": "laltralista"
+    "scheme": "laltralista",
+    "android": {
+      "package": "com.ciarlibraun.laltralista"
+    }
   }
 }
