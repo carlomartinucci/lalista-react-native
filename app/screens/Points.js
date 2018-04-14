@@ -1,20 +1,20 @@
 import React from 'react';
-import { StyleSheet, Text, View, ScrollView, FlatList } from 'react-native';
+import { StyleSheet, View, ScrollView, FlatList } from 'react-native';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import moment from 'moment';
 
-import styles from './styles';
-import AppText from './app_text';
+import styles from '../config/styles';
+import Text from '../components/Text';
 
 const Point = ({ id, person, word, created_at }) => (
   <View key={id} style={styles.point}>
-    <AppText>
+    <Text>
       {person.name} ha detto {word.name}
-    </AppText>
-    <AppText style={styles.textGrey}>
+    </Text>
+    <Text style={styles.textGrey}>
       Segnata alle {moment(created_at).format('H:mm')} del {moment(created_at).format('DD/MM')}
-    </AppText>
+    </Text>
   </View>
 )
 

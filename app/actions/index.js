@@ -2,10 +2,8 @@
 
 import moment from 'moment';
 
-// import ENDPOINT from './endpoint';
-
-// const ENDPOINT = 'http://192.168.1.6:3000'
-const ENDPOINT = 'https://lalista-be.herokuapp.com';
+import settings from '../config/settings';
+const { ENDPOINT } = settings
 
 // import { AsyncStorage } from 'react-native';
 

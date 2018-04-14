@@ -1,30 +1,30 @@
 import React from 'react';
-import { StyleSheet, Text, View, ScrollView, FlatList } from 'react-native';
+import { StyleSheet, View, ScrollView, FlatList } from 'react-native';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import moment from 'moment';
 
 // import logo from './images/logo.png';
-import styles from './styles';
+import styles from '../config/styles';
 
-import AppText from './app_text';
+import Text from '../components/Text';
 
 const Rank = ({ rank, person, points_count }) => (
   <View style={styles.rank}>
     <View style={styles.rankSquare}>
-      <AppText style={styles.textGrey}>
+      <Text style={styles.textGrey}>
         {points_count}
-      </AppText>
+      </Text>
     </View>
 
-    <AppText>
+    <Text>
       {person.name}
-    </AppText>
+    </Text>
 
     <View style={styles.rankSquare}>
-      <AppText>
+      <Text>
         L
-      </AppText>
+      </Text>
     </View>
   </View>
 )

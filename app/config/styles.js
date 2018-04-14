@@ -3,23 +3,25 @@ import { StyleSheet } from 'react-native';
 
 export const colors = {
   primary: 'rgb(0, 123, 255)',
+  dark: 'rgba(0, 0, 0, 0.87)',
+  light: 'rgba(255, 255, 255, 0.87)',
+  white: 'white',
 }
 
-const styles = StyleSheet.create({
+export const tintColors = {
+  activeTintColor: colors.primary,
+  inactiveTintColor: colors.dark,
+}
+
+export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: colors.white,
   },
 
-  header: {
-    backgroundColor: 'rgb(0, 123, 255)',
-    height: 64,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
   main: {
-    backgroundColor: 'white',
-    flex: 2,
+    backgroundColor: colors.white,
+    flex: 1,
   },
 
   point: {

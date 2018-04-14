@@ -1,15 +1,15 @@
 import React from 'react';
-import { StyleSheet, Text, View, ScrollView, FlatList, SectionList, TouchableNativeFeedback, Button } from 'react-native';
+import { StyleSheet, View, ScrollView, FlatList, SectionList, TouchableNativeFeedback, Button } from 'react-native';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import moment from 'moment';
 
 // import logo from './images/logo.png';
-import styles, { colors } from './styles';
+import styles, { colors } from '../config/styles';
 
-import AppText from './app_text';
+import Text from '../components/Text';
 
-import { scorePoint } from './actions';
+import { scorePoint } from '../actions';
 
 class ScoreScreen extends React.PureComponent {
   static propTypes = {
@@ -61,9 +61,9 @@ const ScorePerson = connect(
       onPress={() => selectPerson(person)}
       background={TouchableNativeFeedback.SelectableBackground()}>
     <View style={styles.score}>
-      <AppText style={person && ui.person && ui.person.id === person.id ? styles.textLight : styles.textGrey}>
+      <Text style={person && ui.person && ui.person.id === person.id ? styles.textLight : styles.textGrey}>
         {person.name}
-      </AppText>
+      </Text>
     </View>
   </TouchableNativeFeedback>
 ))
@@ -72,7 +72,7 @@ const ScorePeople = ({ people }) => {
   return (
     <React.Fragment>
       <View style={styles.score}>
-        <AppText style={styles.textSubHeader}>Segna a...</AppText>
+        <Text style={styles.textSubHeader}>Segna a...</Text>
       </View>
       <FlatList
         style={styles.main}
@@ -91,7 +91,7 @@ const ScoreConfirmPerson = connect(
 )(({ person, resetPerson }) => (
   <React.Fragment>
     <View style={styles.score}>
-      <AppText style={styles.textSubHeader}>Segna a</AppText>
+      <Text style={styles.textSubHeader}>Segna a</Text>
     </View>
     <Button
       onPress={resetPerson}
@@ -111,9 +111,9 @@ const ScoreWord = connect(
       onPress={() => selectWord(word)}
       background={TouchableNativeFeedback.SelectableBackground()}>
     <View style={styles.score}>
-      <AppText style={word && ui.word && ui.word.id === word.id ? styles.textLight : styles.textGrey}>
+      <Text style={word && ui.word && ui.word.id === word.id ? styles.textLight : styles.textGrey}>
         {word.name}
-      </AppText>
+      </Text>
     </View>
   </TouchableNativeFeedback>
 ))
@@ -122,7 +122,7 @@ const ScoreWords = ({ words }) => {
   return (
     <React.Fragment>
       <View style={styles.score}>
-        <AppText style={styles.textSubHeader}>la parola...</AppText>
+        <Text style={styles.textSubHeader}>la parola...</Text>
       </View>
       <FlatList
         style={styles.main}
@@ -140,7 +140,7 @@ const ScoreConfirmWord = connect(
 )(({ word, resetWord }) => (
   <React.Fragment>
     <View style={styles.score}>
-      <AppText style={styles.textSubHeader}>la parola</AppText>
+      <Text style={styles.textSubHeader}>la parola</Text>
     </View>
     <Button
       onPress={resetWord}
